@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Japan foods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF0F4;--tx:#1B2A41;--mu:#4A5870;--cd:#FFFFFF;--ln:#CBD2DF;--sun:#C8334A;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14203A;--tx:#F2F0EA;--mu:#AEB8CC;--cd:#1E2C4D;--ln:#33446B;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14203A;--tx:#F2F0EA;--mu:#AEB8CC;--cd:#1E2C4D;--ln:#33446B;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 1rem/1.65 "Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;margin:0;line-height:1.1}
+.hero{position:relative;min-height:100svh;display:grid;align-content:center;padding:4rem 1.5rem;overflow:hidden}
+.sun{position:absolute;right:-8vw;top:50%;width:min(62vw,460px);aspect-ratio:1;border-radius:50%;background:var(--sun);transform:translateY(-50%);opacity:.92;animation:rise 1.6s cubic-bezier(.2,.8,.2,1) both,glow 6s 1.6s ease-in-out infinite}
+@keyframes rise{from{transform:translateY(40%) scale(.6);opacity:0}}
+@keyframes glow{50%{transform:translateY(-50%) scale(1.04)}}
+.vert{position:absolute;right:1.5rem;top:2rem;writing-mode:vertical-rl;font:800 clamp(2rem,6vw,3.6rem)/1 "Shippori Mincho",serif;letter-spacing:.3em;color:var(--tx);animation:fade 1.2s 1.2s both}
+@keyframes fade{from{opacity:0}}
+.hero h1{position:relative;font-size:clamp(3.4rem,15vw,10rem);font-weight:800;letter-spacing:-.02em}
+.hero h1 span{display:inline-block;animation:drop .9s calc(var(--i)*70ms + .3s) cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes drop{from{opacity:0;transform:translateY(-1.2em) rotate(-8deg)}}
+.hero p{position:relative;max-width:34ch;font-size:1.15rem;color:var(--mu);margin:1.5rem 0 0;animation:fade 1s 1.4s both}
+.col{position:relative;display:flex;gap:.8rem;margin-top:2rem;max-width:520px;animation:fade 1s 1.6s both}.col .pic{flex:1;border:1px solid var(--ln);animation:bob 4s ease-in-out infinite}.col .pic:nth-child(2){animation-delay:-1.3s}.col .pic:nth-child(3){animation-delay:-2.6s}.col .pic svg{height:110px}@keyframes bob{50%{transform:translateY(-10px)}}.hero .by{margin-top:1.2rem;font-weight:700;color:var(--tx)}
+.mq{border-block:1px solid var(--ln);overflow:hidden;white-space:nowrap;padding:.9rem 0}
+.mq div{display:inline-block;animation:slide 40s linear infinite;font:600 1.6rem "Shippori Mincho",serif}
+.mq span{margin:0 1.4rem}
+.mq:hover div{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:5rem 1.5rem;max-width:1180px;margin:auto}
+h2{font-size:clamp(2rem,6vw,3.4rem)}
+.lead{color:var(--mu);max-width:52ch;margin:.8rem 0 2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem}
+.chips button{font:inherit;color:var(--tx);background:transparent;border:1.5px solid var(--ln);border-radius:99px;padding:.45rem 1.1rem;cursor:pointer;transition:background .25s,border-color .25s,transform .25s}
+.chips button:hover{transform:translateY(-2px)}
+.chips button[aria-pressed="true"]{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+button:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.2rem}
+.card{background:var(--cd);border:1px solid var(--ln);border-top:6px solid var(--c);border-radius:6px;padding:1.3rem;display:flex;flex-direction:column;gap:.5rem;opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s,box-shadow .3s}
+.card.in{opacity:1;transform:none}
+.card:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 14px 28px rgba(20,32,58,.18)}
+.pic{background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:4px;padding:.5rem}.pic svg{display:block;width:100%;height:92px}.kj{font:800 2.3rem/1.15 "Shippori Mincho",serif;color:var(--c);word-break:keep-all}
+.card h3{font-size:1.35rem}
+.tag{font-size:.85rem;color:var(--mu);display:flex;align-items:center;gap:.45rem}
+.tag i{width:.6rem;height:.6rem;border-radius:50%;background:var(--c)}
+.card p{margin:0;color:var(--mu);font-size:.97rem}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem 3rem;margin-top:2rem}
+.tips div{border-left:4px solid var(--sun);padding-left:1.1rem;opacity:0;transform:translateX(-24px);transition:opacity .7s,transform .7s}
+.tips div.in{opacity:1;transform:none}
+.tips h3{font-size:1.3rem;margin-bottom:.3rem}
+.tips p{margin:0;color:var(--mu)}
+footer{text-align:center;padding:3rem 1.5rem;color:var(--mu);border-top:1px solid var(--ln)}
+footer b{font:800 1.6rem "Shippori Mincho",serif;color:var(--tx);display:block}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card,.tips div{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="vert" aria-hidden="true">日本の味</div>
+  <h1 id="t" aria-label="Japan foods">Japan foods</h1>
+  <p id="sub"></p>
+  <div class="col" id="col" aria-hidden="true"></div>
+  <p class="by">Made by AJ</p>
+</header>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="menu">
+  <h2>The menu</h2>
+  <p class="lead">Pick a type to filter the dishes. Each card shows the Japanese name and a short note on what you will find on the plate.</p>
+  <div class="chips" id="chips" role="group" aria-label="Filter dishes by type"></div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+</section>
+
+<section id="tips">
+  <h2>How to eat like a local</h2>
+  <div class="tips">
+    <div><h3>Slurp your noodles</h3><p>Slurping ramen, udon and soba is normal. It cools the noodles and brings out the broth’s aroma.</p></div>
+    <div><h3>Say itadakimasu</h3><p>Say it before the first bite, and “gochisousama deshita” when you finish, to thank the cook.</p></div>
+    <div><h3>Mind your chopsticks</h3><p>Never stand them upright in rice, and do not pass food from chopsticks to chopsticks.</p></div>
+    <div><h3>Dip, do not drown</h3><p>Touch the fish side of sushi to soy sauce, not the rice, so the rice stays together.</p></div>
+    <div><h3>Try the small counters</h3><p>Tiny counter-only shops often cook one dish very well. Buy a ticket from the machine and sit down.</p></div>
+    <div><h3>Eat with the seasons</h3><p>Oden in winter, cold soba in summer, mochi in spring. Menus change with the weather.</p></div>
+  </div>
+</section>
+
+<footer><b>いただきます</b>Eat well, and enjoy Japan.<br>Made by AJ</footer>
+
+<script>
+const C={r:["Rice & seafood","#C8334A"],n:["Noodles","#D9A441"],f:["Fried & grilled","#E07B39"],h:["Hot pot & soup","#3E9C96"],s:["Street food","#7FA04A"],w:["Sweets","#D98BA5"]};
+const D=[
+["Sushi","寿司","r","Vinegared rice topped or rolled with fresh fish, egg or vegetables."],
+["Sashimi","刺身","r","Thin slices of raw fish, eaten with soy sauce and wasabi."],
+["Onigiri","おにぎり","r","Hand-pressed rice balls with fillings like salmon or pickled plum."],
+["Katsudon","カツ丼","r","A fried pork cutlet and egg simmered over a bowl of rice."],
+["Gyudon","牛丼","r","Thin beef and onion simmered in sweet soy broth over rice."],
+["Unagi","うな丼","r","Grilled freshwater eel glazed in sweet soy sauce, served on rice."],
+["Curry rice","カレー","r","Thick, mild Japanese curry served with rice and pickles."],
+["Ramen","ラーメン","n","Wheat noodles in rich broth: shoyu, miso, shio or tonkotsu."],
+["Udon","うどん","n","Thick, chewy wheat noodles in hot broth or served cold."],
+["Soba","そば","n","Buckwheat noodles, chilled with dipping sauce or in hot soup."],
+["Yakisoba","焼きそば","n","Stir-fried noodles with cabbage, pork and a tangy sauce."],
+["Tempura","天ぷら","f","Seafood and vegetables in a light, crisp batter."],
+["Tonkatsu","とんかつ","f","Breaded, deep-fried pork cutlet with shredded cabbage."],
+["Karaage","唐揚げ","f","Marinated chicken, lightly coated and fried until crunchy."],
+["Yakitori","焼き鳥","f","Chicken skewers grilled over charcoal, with salt or tare sauce."],
+["Gyoza","餃子","f","Pan-fried dumplings with a crisp base and a pork and cabbage filling."],
+["Miso soup","味噌汁","h","Savory dashi broth with miso, tofu and seaweed."],
+["Oden","おでん","h","Daikon, eggs and fish cakes simmered in a light broth. A winter favorite."],
+["Sukiyaki","すき焼き","h","Beef and vegetables simmered in a sweet pot and dipped in raw egg."],
+["Shabu-shabu","しゃぶしゃぶ","h","Thin meat swished through hot broth, then dipped in sesame sauce."],
+["Takoyaki","たこ焼き","s","Crisp, round batter balls with octopus, made famous in Osaka."],
+["Okonomiyaki","お好み焼き","s","A savory cabbage pancake topped with sauce and mayonnaise."],
+["Taiyaki","たい焼き","s","Fish-shaped cake filled with sweet red bean paste."],
+["Mochi","餅","w","Soft, stretchy rice cake, often filled with bean paste or fruit."],
+["Dorayaki","どら焼き","w","Two fluffy pancakes sandwiching sweet red bean paste."],
+["Matcha parfait","抹茶パフェ","w","Layers of green tea ice cream, jelly, cream and fruit."]
+];
+const P={Sushi:["roll","#2B3A55","#E9764F"],Sashimi:["plate","#2B3A55","#E9764F","#E24B5A"],Onigiri:["tri"],Katsudon:["bowl","#8C3B2A","#F4EFE6","#D9A441"],Gyudon:["bowl","#2B3A55","#F4EFE6","#8A4B2F"],Unagi:["bowl","#8C3B2A","#F4EFE6","#5A3320"],"Curry rice":["bowl","#EDE6D6","#B9741E","#F4EFE6"],Ramen:["noodle","#C8334A","#D9A441","#F5E3A8"],Udon:["noodle","#2B3A55","#E8D9B0","#FFF6DD"],Soba:["noodle","#2B3A55","#B58B5A","#8A7360"],Yakisoba:["plate","#2B3A55","#B9741E","#7FA04A"],Tempura:["plate","#2B3A55","#E8B857","#E8A03C"],Tonkatsu:["plate","#EDEDED","#C98A3C","#9CC06A"],Karaage:["plate","#2B3A55","#D9902F","#E8B857"],Yakitori:["stick","","#B8622C","#E07B39"],Gyoza:["plate","#EDEDED","#E8C27A","#F4EFE6"],"Miso soup":["bowl","#C8334A","#B07A3C","#F4EFE6"],Oden:["bowl","#2B3A55","#E8D9B0","#C98A3C"],Sukiyaki:["bowl","#1F1F26","#8A4B2F","#7FA04A"],"Shabu-shabu":["bowl","#EDE6D6","#D9E8E5","#E7676F"],Takoyaki:["ball","","#C98A3C","#4A2A1A"],Okonomiyaki:["plate","#2B3A55","#B9741E","#F4EFE6"],Taiyaki:["fish","","#D99A4E","#B97A33"],Mochi:["ball","","#F7F1F3","#D98BA5"],Dorayaki:["disc","","#B9741E","#5A2A2A"],"Matcha parfait":["glass","","#BFE3D2","#7FA04A"]};
+const art=n=>{const[t,a,b,c]=P[n]||["plate","#2B3A55","#E9764F","#7FA04A"];let s="";
+if(t=="bowl"||t=="noodle"){s=`<path d="M10 34h100a50 40 0 0 1-100 0z" fill="${a}"/><ellipse cx="60" cy="34" rx="50" ry="9" fill="${b}"/>`+(t=="noodle"?`<path d="M24 34q9-9 18 0t18 0t18 0t18 0" stroke="${c}" stroke-width="4" fill="none"/><circle cx="84" cy="31" r="7" fill="#F4EFE6"/><circle cx="84" cy="31" r="3" fill="#E9A23B"/>`:`<circle cx="42" cy="32" r="7" fill="${c}"/><circle cx="64" cy="29" r="7" fill="${c}"/><circle cx="84" cy="33" r="6" fill="${c}"/>`)}
+else if(t=="plate")s=`<ellipse cx="60" cy="50" rx="54" ry="20" fill="${a}"/><rect x="26" y="30" width="26" height="22" rx="7" fill="${b}"/><rect x="54" y="24" width="26" height="26" rx="7" fill="${c}"/><rect x="82" y="32" width="20" height="20" rx="7" fill="${b}"/>`;
+else if(t=="roll")s=`<ellipse cx="60" cy="52" rx="54" ry="18" fill="${a}"/>`+[32,62,92].map(x=>`<ellipse cx="${x}" cy="48" rx="15" ry="9" fill="#F4EFE6"/><ellipse cx="${x}" cy="42" rx="17" ry="8" fill="${b}"/>`).join("");
+else if(t=="stick")s=`<path d="M8 58L112 20" stroke="#C9A66B" stroke-width="4"/>`+[[36,48],[62,39],[88,30]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="12" fill="${b}"/><circle cx="${p[0]-3}" cy="${p[1]-3}" r="4" fill="${c}"/>`).join("");
+else if(t=="ball")s=`<ellipse cx="60" cy="54" rx="52" ry="16" fill="#2B3A55"/>`+[[36,40],[62,34],[88,40]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="16" fill="${b}"/><path d="M${p[0]-10} ${p[1]}q10-6 20 0" stroke="${c}" stroke-width="3" fill="none"/>`).join("");
+else if(t=="fish")s=`<ellipse cx="55" cy="40" rx="40" ry="22" fill="${b}"/><path d="M92 40l22-18v36z" fill="${b}"/><circle cx="34" cy="34" r="3" fill="#222"/><path d="M50 28q5 12 0 24M62 28q5 12 0 24M74 29q5 11 0 22" stroke="${c}" fill="none" stroke-width="2.5"/>`;
+else if(t=="tri")s=`<path d="M60 6L102 62Q60 72 18 62z" fill="#F4EFE6"/><path d="M44 44h32l12 19Q60 70 32 63z" fill="#1F3329"/>`;
+else if(t=="disc")s=`<ellipse cx="60" cy="52" rx="40" ry="14" fill="${b}"/><ellipse cx="60" cy="42" rx="36" ry="11" fill="${c}"/><ellipse cx="60" cy="32" rx="40" ry="14" fill="${b}"/>`;
+else s=`<path d="M32 8h56l-12 54H44z" fill="${b}" opacity=".6"/><path d="M38 28h44l-3 14H41z" fill="${c}"/><path d="M42 46h36l-2 10H44z" fill="#F4EFE6"/><circle cx="60" cy="10" r="7" fill="#E7676F"/><rect x="46" y="62" width="28" height="5" rx="2" fill="${b}"/>`;
+return '<div class="pic"><svg viewBox="0 0 120 76" aria-hidden="true">'+s+'</svg></div>'};
+const $=id=>document.getElementById(id);
+$("sub").textContent=D.length+" dishes to try across Japan, from ramen counters to tea-house sweets.";
+$("t").innerHTML=[..."Japan foods"].map((c,i)=>'<span aria-hidden="true" style="--i:'+i+'">'+(c===" "?"&nbsp;":c)+'</span>').join("");
+const m=D.map(d=>"<span>"+d[1]+"</span>").join("");$("mq").innerHTML=m+m;
+let io;
+try{io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15})}catch(e){}
+const reveal=el=>io?io.observe(el):el.classList.add("in");
+function show(k){
+  const g=$("grid");g.innerHTML="";
+  D.filter(d=>k==="all"||d[2]===k).forEach((d,i)=>{
+    const a=document.createElement("article");a.className="card";
+    a.style.setProperty("--c",C[d[2]][1]);a.style.transitionDelay=(i%6)*70+"ms";
+    a.innerHTML=art(d[0])+'<div class="kj" lang="ja">'+d[1]+'</div><h3>'+d[0]+'</h3><div class="tag"><i></i>'+C[d[2]][0]+'</div><p>'+d[3]+'</p>';
+    g.appendChild(a);reveal(a);
+  });
+}
+const keys=[["all","All"]].concat(Object.keys(C).map(k=>[k,C[k][0]]));
+$("chips").innerHTML=keys.map(k=>'<button type="button" data-k="'+k[0]+'" aria-pressed="'+(k[0]==="all")+'">'+k[1]+'</button>').join("");
+$("chips").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  $("chips").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  show(b.dataset.k);
+});
+show("all");
+$("col").innerHTML=["Ramen","Sushi","Taiyaki"].map((n,i)=>art(n).replace('class="pic"','class="pic" style="--c:'+["#C8334A","#D9A441","#E07B39"][i]+'"')).join("");
+document.querySelectorAll(".tips div").forEach((el,i)=>{el.style.transitionDelay=(i%3)*120+"ms";reveal(el)});
+</script>
+</body>
+</html>
